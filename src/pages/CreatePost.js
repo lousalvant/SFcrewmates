@@ -46,59 +46,68 @@ const CreatePost = () => {
 
         await supabase.from('Posts').insert(post);
 
-        alert('Character successfully created!');
+        alert('Profile successfully created!');
         // Clear input fields after submission
         setPost({ name: '', character: '', play_style: '', description: '' });
         setCharacterImage('');
+        window.location = "http://localhost:3000/";
     };
 
     return (
-        <div>
+        <div className='form-container'>
             <form onSubmit={createPost}>
-                <label htmlFor="name">Name:</label> <br />
-                <input type="text" id="name" name="name" value={post.name} onChange={handleChange} />
-                <br />
-                <br />
+                <div className='name-container'>
+                    <label htmlFor="name">Name:</label> <br />
+                    <input type="text" id="name" name="name" value={post.name} onChange={handleChange} />
+                    <br />
+                    <br />
+                </div>
 
-                <label htmlFor="character">Character:</label> <br />
-                <select id="character" name="character" value={post.character} onChange={handleChange}>
-                    <option value="">Select Character</option>
-                    <option value="Ryu">Ryu</option>
-                    <option value="Ken">Ken</option>
-                    <option value="E. Honda">E. Honda</option>
-                    <option value="Chun-Li">Chun-Li</option>
-                    <option value="Blanka">Blanka</option>
-                    <option value="Guile">Guile</option>
-                    <option value="Dhalsim">Dhalsim</option>
-                </select>
-                {characterImage && <img src={characterImage} alt="Character" />}
-                <br />
-                <br />
+                <div className='character-container'>
+                    <label htmlFor="character">Character:</label> <br />
+                    <select id="character" name="character" value={post.character} onChange={handleChange}>
+                        <option value="">Select Character</option>
+                        <option value="Ryu">Ryu</option>
+                        <option value="Ken">Ken</option>
+                        <option value="E. Honda">E. Honda</option>
+                        <option value="Chun-Li">Chun-Li</option>
+                        <option value="Blanka">Blanka</option>
+                        <option value="Guile">Guile</option>
+                        <option value="Dhalsim">Dhalsim</option>
+                    </select>
+                    {characterImage && <img src={characterImage} alt="Character" />}
+                    <br />
+                    <br />
+                </div>
 
-                <label>Play Style:</label> <br />
-                <label>
-                    <input type="radio" name="play_style" value="All-around" checked={post.play_style === 'All-around'} onChange={handleChange} />
-                    All-around
-                </label>
-                <br />
-                <label>
-                    <input type="radio" name="play_style" value="Rushdown" checked={post.play_style === 'Rushdown'} onChange={handleChange} />
-                    Rushdown
-                </label>
-                <br />
-                <label>
-                    <input type="radio" name="play_style" value="Zoning" checked={post.play_style === 'Zoning'} onChange={handleChange} />
-                    Zoning
-                </label>
-                <br />
-                <br />
+                <div className='playstyle-container'>
+                    <label>Play Style:</label> <br />
+                    <label>
+                        <input type="radio" name="play_style" value="All-around" checked={post.play_style === 'All-around'} onChange={handleChange} />
+                        All-around
+                    </label>
+                    <br />
+                    <label>
+                        <input type="radio" name="play_style" value="Rushdown" checked={post.play_style === 'Rushdown'} onChange={handleChange} />
+                        Rushdown
+                    </label>
+                    <br />
+                    <label>
+                        <input type="radio" name="play_style" value="Zoning" checked={post.play_style === 'Zoning'} onChange={handleChange} />
+                        Zoning
+                    </label>
+                    <br />
+                    <br />
+                </div>
 
-                <label htmlFor="description">Description:</label> <br />
-                <textarea id="description" name="description" value={post.description} onChange={handleChange} />
-                <br />
-                <br />
+                <div className='description-container'>
+                    <label htmlFor="description">What do you have to say?</label> <br />
+                    <textarea id="description" name="description" value={post.description} onChange={handleChange} />
+                    <br />
+                    <br />
+                </div>
 
-                <button type="submit">Create Character</button>
+                <button type="submit">Create Profile</button>
             </form>
         </div>
     );

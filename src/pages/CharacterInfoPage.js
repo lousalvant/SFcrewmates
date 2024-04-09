@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { supabase } from '../client'; // Import Supabase client instance
+import { supabase } from '../client';
+import './CharacterInfoPage.css';
 
 // Function to get character image URL based on character name
 const getCharacterImageUrl = (character) => {
@@ -52,15 +53,15 @@ const CharacterInfoPage = () => {
     }, [id]);
 
     return (
-        <div>
+        <div className='container'>
             <h2>Character Profile:</h2>
             {characterInfo ? (
-                <div>
+                <div className='character-info'>
                     <h3>{characterInfo.name}</h3>
                     <p>Character: {characterInfo.character}</p>
                     <p>Play Style: {characterInfo.play_style}</p>
                     <img src={getCharacterImageUrl(characterInfo.character)} alt={characterInfo.character} />
-                    <p>Description: {characterInfo.description}</p>
+                    <p>{characterInfo.description}</p>
                     {/* Add more details as needed */}
                     
                 </div>

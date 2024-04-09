@@ -5,13 +5,17 @@
   font-size: calc(10px + 2vmin);
   color: white;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.962);
   padding:20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background-image: url('https://i.pinimg.com/originals/52/60/db/5260dbc1bad2db6fc87c7af1e6da98ef.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
 }
 
 .header{
@@ -36,7 +40,7 @@ button {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
-  font-size: 15px;
+  font-size: 20px;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
