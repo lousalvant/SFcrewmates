@@ -65,7 +65,7 @@ h1 {
   text-indent: -9999px; /* Hide the text */
   width: 100%; /* Set the width of the title */
   height: 100px; /* Set the height of the title */
-  background-image: url('C:\Users\Lou Salvant\Documents\School\SPRING 2024\COP 4808\Labs\web102_unit7lab\titleimage.png'); /* Replace 'path/to/your/titleimage.png' with the actual path to your image */
+  background-image: url('C:\Users\Lou Salvant\Documents\School\SPRING 2024\COP 4808\Projects\hw7-lousalvant\src\titleimage.png'); /* Replace 'path/to/your/titleimage.png' with the actual path to your image */
   background-size: contain; /* Ensure the image covers the entire area of the title */
   background-repeat: no-repeat; /* Prevent the image from repeating */
   margin: 0 auto; /* Center the title horizontally */
